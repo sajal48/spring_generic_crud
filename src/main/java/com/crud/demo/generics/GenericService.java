@@ -9,8 +9,11 @@ import java.util.Optional;
 public class GenericService <T extends BaseEntity, ID extends Serializable>
 {
 
-    @Autowired
-    private GenericRepository <T, ID> genericRepository;
+    private final GenericRepository <T, ID> genericRepository;
+
+    public GenericService(GenericRepository<T, ID> genericRepository) {
+        this.genericRepository = genericRepository;
+    }
 
     public <S extends T> S save(S entity) {
         return genericRepository.save(entity);

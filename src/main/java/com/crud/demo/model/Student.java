@@ -13,9 +13,7 @@ import java.io.Serializable;
 @Table(name = "student")
 public class Student extends BaseEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
     private String name;
     private String lastName;
     private Integer age;
